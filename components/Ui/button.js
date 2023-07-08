@@ -1,6 +1,6 @@
 import Link from "next/link"; //like navigate in reactjs
 
-import design from "./Button.module.css";
+import design from "./button.module.css";
 
 function Button(props) {
   if (props.link) {
