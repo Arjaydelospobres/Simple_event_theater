@@ -1,0 +1,68 @@
+const DUMMY_EVENTS = [
+  {
+    id: "e1",
+    title: "Monkey and Turtle",
+    description: `The Turtle and the Monkey 
+      (Tagalog: Ang Pagong at ang Matsing or Si Pagong at si Matsing) 
+      also known as The Monkey and the Turtle is a Philippine fable. 
+      It involves the tortoise outwitting a monkey over a banana tree. 
+      The story was popularized by Jose Rizal, who made a publication of 
+      the story in English in the July 1889 issue of Trübner's Oriental Record in England, 
+      which is considered to be the formal beginning of Philippine children's literature.`,
+    location: "Bocaue, Bulacan, Philippines, (Philippine Arena)",
+    date: "2023-08-18 3:00 PM",
+    image: "images/monkey_and_turtle.jpg",
+    isFeatured: true,
+  },
+  {
+    id: "e2",
+    title: "A Sea of Stories : Tales of Sulu",
+    description:
+      "A collection of 5 stories about the fascinating creatures and people in the islands dotting the Sulu Sea.",
+    location: "SM CITY, CABANATUAN, CITY NUEVA ECIJA",
+    date: "2023-07-9",
+    image: "images/sea_of_story.jpg",
+    isFeatured: false,
+  },
+  {
+    id: "e3",
+    title: "Kung bakit umuulan",
+    description: `Tungkung Langit is the great creator.
+       He made the sun, the stars, the moon, 
+       the planets. His wife, Alunsina, wants to be able to create too.
+        But Tungkung Langit only answered, "I would rather see you smile, fix your hair and stay beautiful.
+        " Alunsina was not content with this answer and continued to plead with her husband to allow her to create. 
+        And each time, Tungkung Langit ignored her pleas. Finally, Alunsina leaves her husband. 
+        Tungkung Langit searched everywhere for his wife until one day, he found her on earth surrounded by trees, 
+        flowers, birds, and fish. "I am creating the world," she announces. "I too am a god."`,
+    location: "Ayala Circle, Makati City",
+    date: "2023-09-7",
+    image: "images/kung_bakit_umuulan.jpg",
+    isFeatured: false,
+  },
+];
+
+export function getFeaturedEvents() {
+  return DUMMY_EVENTS.filter((event) => event.isFeatured);
+}
+
+export function getAllEvents() {
+  return DUMMY_EVENTS;
+}
+
+export function getFilteredEvents(dateFilter) {
+  const { year, month } = dateFilter;
+
+  let filteredEvents = DUMMY_EVENTS.filter((event) => {
+    const eventDate = new Date(event.date);
+    return (
+      eventDate.getFullYear() === year && eventDate.getMonth() === month - 1
+    );
+  });
+
+  return filteredEvents;
+}
+
+export function getEventById(id) {
+  return DUMMY_EVENTS.find((event) => event.id === id);
+}
