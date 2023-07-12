@@ -21,18 +21,6 @@ function EventDetailPage(props) {
       </ErrorAlert>
     );
   }
-  // const router = useRouter();
-
-  // const eventid = router.query.eventid;
-  // const event = getEventById(eventid);
-  // console.log(eventid);
-  // if (!event) {
-  //   return (
-  //     <ErrorAlert>
-  //       <p>No event found!</p>
-  //     </ErrorAlert>
-  //   );
-  // }
 
   return (
     <Fragment>
