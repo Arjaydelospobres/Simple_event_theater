@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import { getFeaturedEvents } from "..//helper/api";
 import EventList from "../components/Event/event-list";
 
@@ -6,6 +8,9 @@ function HomePage(props) {
 
   return (
     <div>
+      <Head>
+        <title>All Theater Event</title>
+      </Head>
       <EventList items={event} />
     </div>
   );
